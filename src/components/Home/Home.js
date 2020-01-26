@@ -1,9 +1,10 @@
-import React, { Component, useState, useEffect } from 'react';
-import './Home.scss';
-import MastHead from '../MastHead/MastHead';
+import Geocode from 'react-geocode';
+import React, { useState, useEffect } from 'react';
 
 import { getWeatherInfo } from '../../services/weatherService';
-import Geocode from 'react-geocode';
+import MastHead from '../MastHead/MastHead';
+
+import './Home.scss';
 
 const Home = () => {
   const [position, setPosition] = useState({});

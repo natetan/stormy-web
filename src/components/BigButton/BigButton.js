@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import './BigButton.scss';
 import Button from 'react-bootstrap/Button';
+import React from 'react';
+
+import './BigButton.scss';
 
 const BigButton = (props) => {
   return (

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './MastHead.scss';
 
-import SearchBar from '../SearchBar/SearchBar';
 import BigButton from '../BigButton/BigButton';
+import SearchBar from '../SearchBar/SearchBar';
+
+import './MastHead.scss';
 
 const MastHead = (props) => {
   return (
