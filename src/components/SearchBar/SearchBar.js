@@ -9,19 +9,14 @@ const SearchBar = (props) => {
     props.handleInput(e.target.value);
   }
 
-  const handleSearch = () => {
-    props.handleSearch();
-  }
-
   return (
     <div className='search-bar'>
-      <Form inline>
+      <Form>
         <FormControl
           type="text"
-          placeholder="Search"
+          placeholder="Type in a location of some sort"
           className="mr-sm-2"
           onChange={handleInput} />
-        <Button variant="outline-secondary" onClick={handleSearch}>Search</Button>
       </Form>
     </div>
   )
