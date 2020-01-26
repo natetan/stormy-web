@@ -14,7 +14,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
 
-  let apiKey;
+  let apiKey = require('../../auth.json').google_api_key;
   try {
     let auth = require('../../auth.json');
     apiKey = auth.google_api_key;
