@@ -1,4 +1,3 @@
-import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import React from 'react';
 
@@ -11,13 +10,12 @@ const SearchBar = (props) => {
 
   return (
     <div className='search-bar'>
-      <Form>
         <FormControl
           type="text"
           placeholder="Type in a location of some sort"
           className="mr-sm-2"
-          onChange={handleInput} />
-      </Form>
+          onChange={handleInput} 
+          onKeyPress={props.handleEnter} />
     </div>
   )
 }

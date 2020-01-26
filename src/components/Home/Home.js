@@ -13,7 +13,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
 
-  Geocode.setApiKey('AIzaSyCStn4TNkpMVqqjh0WQnlvwtTXZJfSyuLw');
+  Geocode.setApiKey(require('../../auth.json').google_api_key);
 
   const onChange = ({ coords }) => {
     setPosition({
@@ -52,6 +52,12 @@ const Home = () => {
     setSearch(query);
   }
 
+  const handleEnter = event => {
+    if (event.key === 'Enter' && search.length) {
+      handleSearch();
+    }
+  }
+
   const handleSearch = () => {
     Geocode.fromAddress(search).then(response => {
       if (response) {
@@ -80,6 +86,7 @@ const Home = () => {
           title={`${location ? location : 'Stormy'}`}
           subtitle={`${desc ? desc : 'Demo weather app'}`}
           handleInput={handleInput}
+          handleEnter={handleEnter}
           onClick={handleSearch}
         />
       </div>

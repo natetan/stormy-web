@@ -1,6 +1,8 @@
 import fetch from 'node-fetch';
 
-let DARK_SKY_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5a2f0cadaacab9b59d1395de30d1b132';
+let apiKey = require('../auth.json').dark_sky_api_key;
+let DARK_SKY_BASE_URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${apiKey}`;
+
 
 export const getWeatherInfo = async (lat, long) => {
   let url = `${DARK_SKY_BASE_URL}/${lat},${long}`;
