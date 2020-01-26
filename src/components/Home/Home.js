@@ -13,7 +13,8 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
 
-  Geocode.setApiKey(require('../../auth.json').google_api_key);
+  let apiKey = (require('../../auth.json').google_api_key || process.env.google_api_key);
+  Geocode.setApiKey(apiKey);
 
   const onChange = ({ coords }) => {
     setPosition({

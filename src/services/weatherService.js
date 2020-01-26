@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-let apiKey = require('../auth.json').dark_sky_api_key;
+let apiKey = require('../auth.json').dark_sky_api_key || process.env.dark_sky_api_key;
 let DARK_SKY_BASE_URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${apiKey}`;
 
 
