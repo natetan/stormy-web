@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import BigButton from '../BigButton/BigButton';
 import SearchBar from '../SearchBar/SearchBar';
 
 import './MastHead.scss';
 
-const MastHead = (props) => {
+const MastHead = props => {
   return (
     <header className="masthead">
       <div className="container d-flex h-100 align-items-center">

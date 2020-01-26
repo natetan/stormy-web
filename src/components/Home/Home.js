@@ -66,7 +66,6 @@ const Home = () => {
           let lat = results[0].geometry.location.lat;
           let long = results[0].geometry.location.lng;
           let city = results[0].address_components[0].long_name;
-          console.log(city);
           console.log(results)
           getWeatherInfo(lat, long).then(res => {
             console.log(res);

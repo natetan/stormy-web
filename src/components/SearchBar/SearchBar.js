@@ -10,12 +10,12 @@ const SearchBar = (props) => {
 
   return (
     <div className='search-bar'>
-        <FormControl
-          type="text"
-          placeholder="Type in a location of some sort"
-          className="mr-sm-2"
-          onChange={handleInput} 
-          onKeyPress={props.handleEnter} />
+      <FormControl
+        type="text"
+        placeholder="Type in a location of some sort"
+        className="mr-sm-2"
+        onChange={handleInput}
+        onKeyPress={props.handleEnter} />
     </div>
   )
 }
