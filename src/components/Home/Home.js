@@ -2,6 +2,7 @@ import Geocode from 'react-geocode';
 import React, { useState, useEffect } from 'react';
 
 import { getWeatherInfo } from '../../services/weatherService';
+import { tryRequire } from '../../lib/utils';
 import MastHead from '../MastHead/MastHead';
 
 import './Home.scss';
@@ -13,7 +14,14 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
 
-  let apiKey = (require('../../auth.json').google_api_key || process.env.google_api_key);
+  let apiKey;
+  try {
+    let auth = require('../../auth.json');
+    apiKey = auth.google_api_key;
+  } catch (e) {
+    console.log(e);
+    apiKey = process.env.google_api_key;
+  }
   Geocode.setApiKey(apiKey);
 
   const onChange = ({ coords }) => {
