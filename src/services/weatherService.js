@@ -6,7 +6,7 @@ try {
   apiKey = auth.dark_sky_api_key;
 } catch (e) {
   console.log(e);
-  apiKey = process.env.dark_sky_api_key;
+  apiKey = process.env.REACT_APP_DARK_SKY_API_KEY;
 }
 
 let DARK_SKY_BASE_URL = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${apiKey}`;

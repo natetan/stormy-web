@@ -19,8 +19,7 @@ const Home = () => {
     let auth = require('../../auth.json');
     apiKey = auth.google_api_key;
   } catch (e) {
-    console.log(e);
-    apiKey = process.env.google_api_key;
+    apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   }
   Geocode.setApiKey(apiKey);
 
